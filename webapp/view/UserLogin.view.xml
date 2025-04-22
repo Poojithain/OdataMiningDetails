@@ -1,0 +1,34 @@
+<mvc:View controllerName="app.miningdetails.controller.UserLogin"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+
+    <Page id="page" title="User Login">
+        <content>
+            <VBox justifyContent="Center" alignItems="Center" fitContainer="true" height="100%">
+                <HBox justifyContent="Center" alignItems="Center">
+                    <f:SimpleForm
+                        layout="ResponsiveGridLayout"
+                        editable="true"
+                        class="sapUiSmallMargin">
+                        
+                        <f:content>
+                            <Label text="Username" labelFor="idUser" design="Bold"/>
+                            <Input id="idUser" placeholder="Enter your username"/>
+
+                            <Label text="Email" labelFor="idUserEma" design="Bold"/>
+                            <Input id="idUserEma" placeholder="Enter your email"/>
+
+                            <Label text="Password" labelFor="idUserPas" design="Bold"/>
+                            <Input id="idUserPas" type="Password" placeholder="Enter your password"/>
+
+                            <HBox justifyContent="Center">
+                                <Button text="Login" press="onUserLogin" width="200px"/>
+                            </HBox>
+                        </f:content>
+                    </f:SimpleForm>
+                </HBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,46 @@
+<mvc:View controllerName="app.miningdetails.controller.UpdateView"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    >
+   <Page>
+   <f:SimpleForm >
+
+         <Label text="LocationId"></Label>
+         <Input id="idLocUp" value="{MiningModel>LocationId}"></Input>
+
+         <Label text="LocationDesc"></Label>
+         <Input id="idLocDesUp" value="{MiningModel>LocationDesc}"></Input>
+
+         <Label text="MiningResource"></Label>
+         <Input id="idMinResUp" value="{MiningModel>MiningResource}"></Input>
+
+         <Label text="TotalCost"></Label>
+         <Input id="idTotCosUp" value="{MiningModel>TotalCost}"></Input>
+
+         <Label text="ReportMineral"></Label>
+         <Input id="idRepMinUp" value="{MiningModel>ReportMineral}"></Input>
+
+         <Label text="NumDrills"></Label>
+         <Input id="idNumDriUp" value="{MiningModel>NumDrills}"></Input>
+
+         <Label text="TypeMineral"></Label>
+         <Input id="idTypMinUp" value="{MiningModel>TypeMineral}"></Input>
+
+         <Label text="Currency"></Label>
+         <Input id="idCurUp" value="{MiningModel>Currency}"></Input>
+
+
+   </f:SimpleForm>
+
+
+   <footer>
+   <OverflowToolbar >
+   <ToolbarSpacer/>
+   <Button text="submit" press="onSubmit"></Button>
+   
+   </OverflowToolbar>
+   </footer>
+   </Page>
+</mvc:View>

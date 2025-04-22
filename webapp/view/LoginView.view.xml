@@ -1,0 +1,16 @@
+<mvc:View controllerName="app.miningdetails.controller.LoginView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page id="page">
+        <!-- Page content can go here -->
+    </Page>
+
+    <Dialog id="loginDialog" title="Login As" >
+        <VBox class="sapUiSmallMargin">
+            <Button text="User Login" press="onUserLogin" width="100%"/>
+            <Button text="Admin Login" press="onAdminLogin" width="100%"/>
+        </VBox>
+    </Dialog>
+
+</mvc:View>

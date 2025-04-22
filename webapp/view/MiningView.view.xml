@@ -1,0 +1,94 @@
+<mvc:View controllerName="app.miningdetails.controller.MiningView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:comp="sap.ui.comp.filterbar"
+    >
+    <Page id="page" title="{i18n>title}">
+
+
+      <comp:FilterBar >
+         <comp:filterItems>
+
+              <comp:FilterItem name="TypeMineral" label="Mineral Type"> 
+                  <comp:control>
+                       <Input id="FilTypMinid" liveChange="onSearch"></Input>
+                    </comp:control>
+              </comp:FilterItem>
+                 <comp:FilterItem name="LocationId" label="Location Id"> 
+                  <comp:control>
+                       <Input id="FilLocid" liveChange="onSearch"></Input>
+
+
+                    </comp:control>
+              </comp:FilterItem>
+
+
+          </comp:filterItems>
+      </comp:FilterBar>
+
+
+
+    <Table items="{MiningModel>/results}" selectionChange="onItemSelect" mode="SingleSelectLeft" id="idTab">
+        <columns>
+
+
+        <Column>
+            <Text text="LocationId"></Text>
+        </Column>
+
+        <!-- <Column>
+            <Text text="LocationDesc"></Text>
+        </Column> -->
+
+        <Column>
+            <Text text="MiningResource"></Text>
+        </Column>
+
+        <Column>
+            <Text text="TotalCost"></Text>
+        </Column>
+
+        <!-- <Column>
+            <Text text="ReportMineral"></Text>
+        </Column> -->
+
+         <Column>
+            <Text text="NumDrills"></Text>
+        </Column>
+
+          <Column>
+            <Text text="TypeMineral"></Text>
+        </Column>
+
+         <!-- <Column>
+            <Text text="Currency"></Text>
+        </Column> -->
+
+        <Column>
+            <Text text="Delete"></Text>
+        </Column>
+
+        </columns>
+
+        <ColumnListItem type="Active">
+        <cells>
+        <Text text="{MiningModel>LocationId}"></Text>
+        <!-- <Text text="{MiningModel>LocationDesc}"></Text> -->
+        <Text text="{MiningModel>MiningResource}"></Text>
+        <Text text="{MiningModel>TotalCost}"></Text>
+        <!-- <Text text="{MiningModel>ReportMineral}"></Text> -->
+        <Text text="{MiningModel>NumDrills}"></Text>
+        <Text text="{MiningModel>TypeMineral}"></Text>
+        <!-- <Text text="{MiningModel>Currency}"></Text> -->
+        <Button icon="sap-icon://delete" press="onDelete"></Button>
+
+        </cells>
+        </ColumnListItem>
+    </Table>
+
+  
+    <Button text="Create" press="onCreate"></Button>
+ 
+    
+    </Page>
+</mvc:View>

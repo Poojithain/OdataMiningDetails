@@ -1,0 +1,31 @@
+<mvc:View controllerName="app.miningdetails.controller.AdminLogin"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    >
+
+    <Page id="page" title="userlogin">
+     
+     <f:SimpleForm>
+    
+    <Label text="Admin ID"></Label>
+    <Input id="idAdID" ></Input>
+
+    <Label text="Username"></Label>
+    <Input id="idAdUserName" ></Input>
+
+    <Label text="Email"></Label>
+    <Input id="idAdEma"></Input>
+
+    <Label text="Password"></Label>
+    <Input id="idAdPass" ></Input>
+
+    <Button text="Login" press="onAdminLogin"></Button>
+      </f:SimpleForm>
+    
+
+ 
+    
+    </Page>
+
+</mvc:View>

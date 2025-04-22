@@ -1,0 +1,16 @@
+/* Enter your custom styles here */
+/* Custom styles for the dialog */
+/* Custom styles for the form */
+.sapUiResponsivePadding {
+    padding: 20px;
+}
+
+.sapUiSmallMargin {
+    margin: 10px 0;
+}
+
+.sapUiSmallMarginEnd {
+    margin-right: 10px;
+}
+
+
