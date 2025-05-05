@@ -3,44 +3,63 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
     >
-   <Page>
-   <f:SimpleForm >
+    
+    <Page title="Update Mining Entry">
+        <f:SimpleForm
+            id="SimpleFormUpdateMining"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="3"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="4"
+            emptySpanL="4"
+            emptySpanM="4"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false">
+            <f:content>
+                <Label text="Location ID" required="true"/>
+                <Input id="idLocUp" value="{MiningModel>LocationId}" enabled="false" />
 
-         <Label text="LocationId"></Label>
-         <Input id="idLocUp" value="{MiningModel>LocationId}"></Input>
+                <Label text="Location Description" />
+                <Input id="idLocDesUp" value="{MiningModel>LocationDesc}" />
 
-         <Label text="LocationDesc"></Label>
-         <Input id="idLocDesUp" value="{MiningModel>LocationDesc}"></Input>
+                <Label text="Mining Resource" />
+                <Input id="idMinResUp" value="{MiningModel>MiningResource}" />
 
-         <Label text="MiningResource"></Label>
-         <Input id="idMinResUp" value="{MiningModel>MiningResource}"></Input>
+                <Label text="Total Cost" />
+                <Input id="idTotCosUp" value="{MiningModel>TotalCost}" />
 
-         <Label text="TotalCost"></Label>
-         <Input id="idTotCosUp" value="{MiningModel>TotalCost}"></Input>
+                <Label text="Report Mineral" />
+                <Input id="idRepMinUp" value="{MiningModel>ReportMineral}" />
 
-         <Label text="ReportMineral"></Label>
-         <Input id="idRepMinUp" value="{MiningModel>ReportMineral}"></Input>
+                <Label text="Number of Drills" />
+                <Input id="idNumDriUp" value="{MiningModel>NumDrills}" />
 
-         <Label text="NumDrills"></Label>
-         <Input id="idNumDriUp" value="{MiningModel>NumDrills}"></Input>
+                <Label text="Type of Mineral" />
+                <Input id="idTypMinUp" value="{MiningModel>TypeMineral}" />
 
-         <Label text="TypeMineral"></Label>
-         <Input id="idTypMinUp" value="{MiningModel>TypeMineral}"></Input>
+                <!-- <Label text="Currency" />
+                <Input id="idCurUp" value="{MiningModel>Currency}" /> -->
 
-         <Label text="Currency"></Label>
-         <Input id="idCurUp" value="{MiningModel>Currency}"></Input>
-
-
-   </f:SimpleForm>
-
-
-   <footer>
-   <OverflowToolbar >
-   <ToolbarSpacer/>
-   <Button text="submit" press="onSubmit"></Button>
-   
-   </OverflowToolbar>
-   </footer>
-   </Page>
+                 <Label text="Currency" />
+                <Select id="idCurUp" selectedKey="{MiningModel>Currency}" change="onChange">
+                    <items>
+                        <core:Item key="USD" text="USD" />
+                        <core:Item key="INR" text="INR" />
+                    </items>
+                </Select>
+            </f:content>
+            <Button text="Submit" press="onSubmit" type="Emphasized" />
+        </f:SimpleForm>               
+        
+    </Page>
 </mvc:View>

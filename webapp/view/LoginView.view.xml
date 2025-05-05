@@ -2,8 +2,8 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
 
-    <Page id="page">
-        <!-- Page content can go here -->
+    <Page id="page5">
+       
     </Page>
 
     <Dialog id="loginDialog" title="Login As" >

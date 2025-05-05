@@ -3,44 +3,59 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
     >
-   <Page>
-   <f:SimpleForm >
+    <Page title="Create Mining Entry">
+        <f:SimpleForm
+            id="SimpleFormCreateMining"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="3"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="4"
+            emptySpanL="4"
+            emptySpanM="4"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false">
+            <f:content>
+                <Label text="Location ID" required="true"/>
+                <Input id="idLocCr" value="{LocationId}" placeholder="  eg : LOCXXX " liveChange="onLiveChange" />
 
-         <Label text="LocationId"></Label>
-         <Input id="idLocCr"></Input>
+                <Label text="Location Description" />
+                <Input id="idLocDesCr" value="{LocationDesc}" liveChange="onLiveChange" />
 
-         <Label text="LocationDesc"></Label>
-         <Input id="idLocDesCr"></Input>
+                <Label text="Mining Resource" />
+                <Input id="idMinResCr" value="{MiningResource}" liveChange="onLiveChange" />
 
-         <Label text="MiningResource"></Label>
-         <Input id="idMinResCr"></Input>
+                <Label text="Total Cost" />
+                <Input id="idTotCos" value="{TotalCost}" liveChange="onLiveChange" />
 
-         <Label text="TotalCost"></Label>
-         <Input id="idTotCos"></Input>
+                <Label text="Report Mineral" />
+                <Input id="idRepMin" value="{ReportMineral}" liveChange="onLiveChange" />
 
-         <Label text="ReportMineral"></Label>
-         <Input id="idRepMin"></Input>
+                <Label text="Number of Drills" />
+                <Input id="idNumDri" value="{NumDrills}" liveChange="onLiveChange" />
 
-         <Label text="NumDrills"></Label>
-         <Input id="idNumDri"></Input>
+                <Label text="Type of Mineral" />
+                <Input id="idTypMin" value="{TypeMineral}" liveChange="onLiveChange" />
 
-         <Label text="TypeMineral"></Label>
-         <Input id="idTypMin"></Input>
-
-         <Label text="Currency"></Label>
-         <Input id="idCur"></Input>
-
-
-   </f:SimpleForm>
-
-
-   <footer>
-   <OverflowToolbar >
-   <ToolbarSpacer/>
-   <Button text="submit" press="onSubmit"></Button>
-   
-   </OverflowToolbar>
-   </footer>
-   </Page>
+                <Label text="Currency" />
+                <Select id="idCur" selectedKey="{Currency}" change="onChange">
+                    <items>
+                        <core:Item key="USD" text="USD" />
+                        <core:Item key="INR" text="INR" />
+                    </items>
+                </Select>
+            </f:content>
+             
+            <Button text="Submit" press="onSubmit" type="Emphasized" />
+        </f:SimpleForm>
+    </Page>
 </mvc:View>

@@ -2,37 +2,50 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
     >
+    <Page id="page" title="Detail View">
+        <f:SimpleForm
+            id="SimpleFormAdminDetailView"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="3"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="4"
+            emptySpanL="4"
+            emptySpanM="4"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false">
+            <f:content>
+                <Label text="Location Id" />
+                <Text text="{MiningModel>LocationId}" />
 
-    <Page id="page" title="DetailView">
-      <f:SimpleForm editable="true">
+                <Label text="Location Description" />
+                <Text text="{MiningModel>LocationDesc}" />
 
-      <Label text="Location Id"></Label>
-      <Text text="{MiningModel>LocationId}"></Text>
+                <Label text="Mining Resource" />
+                <Text text="{MiningModel>MiningResource}" />
 
-      <Label text="Location Description"></Label>
-      <Text text="{MiningModel>LocationDesc}"></Text>
+                <Label text="Mineral Report" />
+                <Text text="{MiningModel>ReportMineral}" />
 
-      <Label text="Mining Resource"></Label>
-      <Text text="{MiningModel>MiningResource}"></Text>
+                <Label text="Number of Drills" />
+                <Text text="{MiningModel>NumDrills}" />
 
-      <Label text="Mineral Report"></Label>
-      <Text text="{MiningModel>ReportMineral}"></Text>
+                <Label text="Mineral Type" />
+                <Text text="{MiningModel>TypeMineral}" />
 
-      <Label text="Number of Drills"></Label>
-      <Text text="{MiningModel>NumDrills}"></Text>
-
-      <Label text="Mineral Type"></Label>
-      <Text text="{MiningModel>TypeMineral}"></Text>
-
-      <Label text="Currency"></Label>
-      <Text text="{MiningModel>Currency}"></Text>
-
-      <Button text="Update" press="onUpdate"></Button>
-      
-      </f:SimpleForm>
- 
-    
+                <Label text="Currency" />
+                <Text text="{MiningModel>Currency}" />
+            </f:content>
+             
+            <Button text="Update" press="onUpdate" type="Emphasized" />
+        </f:SimpleForm>
     </Page>
-
 </mvc:View>

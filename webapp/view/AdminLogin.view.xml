@@ -1,31 +1,37 @@
 <mvc:View controllerName="app.miningdetails.controller.AdminLogin"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:f="sap.ui.layout.form"
-    >
+    xmlns:f="sap.ui.layout.form">
 
-    <Page id="page" title="userlogin">
-     
-     <f:SimpleForm>
-    
-    <Label text="Admin ID"></Label>
-    <Input id="idAdID" ></Input>
+    <Page id="page" title="Admin Login">
+        <content>
+            <VBox justifyContent="Center" alignItems="Center" fitContainer="true" height="100%">
+                <HBox justifyContent="Center" alignItems="Center">
+                    <f:SimpleForm
+                        layout="ResponsiveGridLayout"
+                        editable="true"
+                        class="sapUiSmallMargin">
+                        
+                        <f:content>
+                            <Label text="Admin ID" labelFor="idAdID" design="Bold"/>
+                            <Input id="idAdID" placeholder="Enter your Admin ID"/>
 
-    <Label text="Username"></Label>
-    <Input id="idAdUserName" ></Input>
+                            <Label text="Username" labelFor="idAdUserName" design="Bold"/>
+                            <Input id="idAdUserName" placeholder="Enter your username"/>
 
-    <Label text="Email"></Label>
-    <Input id="idAdEma"></Input>
+                            <Label text="Email" labelFor="idAdEma" design="Bold"/>
+                            <Input id="idAdEma" placeholder="Enter your email"/>
 
-    <Label text="Password"></Label>
-    <Input id="idAdPass" ></Input>
+                            <Label text="Password" labelFor="idAdPass" design="Bold"/>
+                            <Input id="idAdPass" type="Password" placeholder="Enter your password"/>
 
-    <Button text="Login" press="onAdminLogin"></Button>
-      </f:SimpleForm>
-    
-
- 
-    
+                            <HBox justifyContent="Center">
+                                <Button text="Login" press="onAdminLogin" width="200px"/>
+                            </HBox>
+                        </f:content>
+                    </f:SimpleForm>
+                </HBox>
+            </VBox>
+        </content>
     </Page>
-
 </mvc:View>

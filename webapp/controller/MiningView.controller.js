@@ -2,13 +2,24 @@ sap.ui.define([
     "./BaseController",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
+    "sap/ui/core/format/NumberFormat",
      "sap/m/MessageBox"
-], (BaseController,Filter,FilterOperator,MessageBox) => {
+], (BaseController,Filter,FilterOperator,NumberFormat,MessageBox) => {
     "use strict";
 
     return BaseController.extend("app.miningdetails.controller.MiningView", {
         onInit() {
+
+            this._getData()
+            let oEventBus = sap.ui.getCore().getEventBus();
+            oEventBus.subscribe("MiningView", "updateData", this._getData, this);
+            oEventBus.subscribe("app", "refreshMainPage", this._getData, this);
+           
+        },
+
+        _getData:function(){
             let oModel=this.getModel();
+
             let entity="/MINING_DATASet";
             oModel.read(entity,{
                 success:(odata,resp)=>{
@@ -26,11 +37,19 @@ sap.ui.define([
             var oRouter=this.getRouter();
             oRouter.navTo("RouteCreateMiningView")
         },
+
+        formatCurrency:function(num, unit){
+            var oCurrencyFormat = NumberFormat.getCurrencyInstance({
+                currencyCode:false
+            });
+             var result=oCurrencyFormat.format(num,unit);
+             return result;
+        },
         onItemSelect:function(oEvent){
              debugger
             var oList=oEvent.getParameter("listItem")
             let sPath=oList.getBindingContextPath("");
-            let aItems=sPath.split("")
+            let aItems=sPath.split("") 
             let id=aItems[aItems.length-1]
             let oRouter=this.getOwnerComponent().getRouter()
             oRouter.navTo("RouteAdminDetailView",{
@@ -39,7 +58,8 @@ sap.ui.define([
         },
 
         onSearch:function(){
-            let aFilter=[];
+            let aFilter=[]
+            
             let sFilTypMin =this.getView().byId("FilTypMinid").getValue();
             let sFilLoc=this.getView().byId("FilLocid").getValue();
 
@@ -54,7 +74,7 @@ sap.ui.define([
                 aFilter.push(filterLocation)
             }
 
-            let oTable=this.getView().byId("idTab");
+            let oTable=this.getView().byId("idTab1");
             let bindingInfo = oTable.getBinding("items");
             if (bindingInfo) {
                 bindingInfo.filter(aFilter);

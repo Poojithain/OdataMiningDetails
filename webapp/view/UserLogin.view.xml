@@ -3,7 +3,7 @@
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form">
 
-    <Page id="page" title="User Login">
+    <Page id="page1" title="User Login">
         <content>
             <VBox justifyContent="Center" alignItems="Center" fitContainer="true" height="100%">
                 <HBox justifyContent="Center" alignItems="Center">

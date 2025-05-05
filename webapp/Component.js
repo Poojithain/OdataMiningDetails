@@ -6,7 +6,7 @@ sap.ui.define([
 
     return UIComponent.extend("app.miningdetails.Component", {
         metadata: {
-            manifest: "json",
+            manifest: "json",                                          
             interfaces: [
                 "sap.ui.core.IAsyncContentCreation"
             ]
